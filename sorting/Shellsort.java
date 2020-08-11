@@ -1,4 +1,4 @@
-package sortingandsearching;
+package sorting;
 
 public class Shellsort {
     private static void shellSort(int[] arr){

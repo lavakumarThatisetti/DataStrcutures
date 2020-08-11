@@ -1,4 +1,4 @@
-package sortingandsearching;
+package sorting;
 
 public class HeapSorting {
     private int heapSize;

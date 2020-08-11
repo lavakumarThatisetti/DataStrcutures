@@ -1,4 +1,4 @@
-package sortingandsearching;
+package searching;
 
 import java.util.Random;
 

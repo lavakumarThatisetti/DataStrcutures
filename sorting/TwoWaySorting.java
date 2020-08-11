@@ -1,4 +1,4 @@
-package sortingandsearching;
+package sorting;
 
 public class TwoWaySorting {
     private static void twoWayMerge(int[] a,int[] b){
