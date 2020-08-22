@@ -1,12 +1,12 @@
 package sorting;
 
-public class heapSort {
+public class MinHeapSort {
 
     private int heapSize;
     private int N;
     private int[] arr;
 
-    private heapSort(int n){
+    private MinHeapSort(int n){
         N=n;
         heapSize=0;
         arr=new int[n];
@@ -114,7 +114,7 @@ public class heapSort {
     public static void main(String[] args) {
         long startTime=System.currentTimeMillis();
         int[] array={10,5,2,6,11,4,3,1,2,3,4,5,6,6,1,111111,55,2222222,77,9,11,22,33,44,55,66};;
-        heapSort hs=new heapSort(array.length);
+        MinHeapSort hs=new MinHeapSort(array.length);
         for(int i=0;i<array.length;i++){
             hs.insertKey(array[i]);
         }

@@ -1,15 +1,26 @@
-package sorting;
+package searching;
 
 import java.util.Random;
 
-public class QuickSort {
-
-    public static void quick(int arr[],int left,int right){
-        if(left<right){
-            int pIndex=Randpartition(arr,left,right);
-            quick(arr,left,pIndex-1);
-            quick(arr,pIndex+1,right);
+public class QuickSelect {
+    private static int kthSmallest(int[] arr,int left,int right,int k){
+            int pIndex=partition(arr,left,right);
+            if(k==pIndex)
+                return arr[pIndex];
+            else if(k<pIndex)
+                return kthSmallest(arr,left,pIndex-1,k);
+            else return kthSmallest(arr,pIndex+1,right,k);
+    }
+    private static int kthSmallestIterative(int[] arr,int left,int right,int k){
+        while(left<=right){
+            int pIndex=partition(arr,left,right);
+            if(k==pIndex)
+                return arr[pIndex];
+            else if(k<pIndex)
+                right=pIndex-1;
+            else left=pIndex+1;
         }
+        return -1;
     }
     private static int partition(int[] arr,int left,int right){
 
@@ -37,16 +48,12 @@ public class QuickSort {
         arr[index]=temp;
         return partition(arr,left,right);
     }
-    private static void printArray(int[] arr){
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i]+" ");
-        }
-    }
     public static void main(String[] args) {
-        int[] arr={10,5,2,6,11,4,3,1,2,3,4,96666555,6,6,9,11,1111111,19,4,15,2};
+        int[] arr={10, 4, 5, 8, 6, 11, 26};
+        int k=3;
         long start=System.currentTimeMillis();
-        quick(arr,0,arr.length-1);
-        printArray(arr);
+        System.out.println(kthSmallest(arr,0,arr.length-1,k-1));
+        System.out.println(kthSmallestIterative(arr,0,arr.length-1,k-1));
         long end=System.currentTimeMillis();
         System.out.println("Latency "+(end-start));
     }
