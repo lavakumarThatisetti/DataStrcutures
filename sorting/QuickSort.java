@@ -29,7 +29,6 @@ public class QuickSort {
         return pIndex;
     }
     private static int Randpartition(int[] arr,int left,int right){
-
         Random rand=new Random();
         int index=rand.nextInt(right-left+1)+left;
         int temp=arr[index];
