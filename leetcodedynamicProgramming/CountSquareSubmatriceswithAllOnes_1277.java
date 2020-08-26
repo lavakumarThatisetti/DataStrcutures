@@ -1,4 +1,4 @@
-package dynamicProgramming_leetcode;
+package leetcodedynamicProgramming;
 
 public class CountSquareSubmatriceswithAllOnes_1277 {
     public static int  countSquares(int[][] mat) {

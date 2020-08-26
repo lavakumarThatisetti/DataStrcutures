@@ -1,4 +1,4 @@
-package dynamicProgramming_leetcode;
+package leetcodedynamicProgramming;
 
 import java.util.Scanner;
 

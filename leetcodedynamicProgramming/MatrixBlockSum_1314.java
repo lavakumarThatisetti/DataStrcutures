@@ -1,4 +1,4 @@
-package dynamicProgramming_leetcode;
+package leetcodedynamicProgramming;
 
 public class MatrixBlockSum_1314 {
     public static void  matrixBlockSum(int[][] mat, int k) {
