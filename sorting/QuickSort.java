@@ -6,7 +6,7 @@ public class QuickSort {
 
     public static void quick(int arr[],int left,int right){
         if(left<right){
-            int pIndex=Randpartition(arr,left,right);
+            int pIndex=randPartition(arr,left,right);
             quick(arr,left,pIndex-1);
             quick(arr,pIndex+1,right);
         }
@@ -28,7 +28,7 @@ public class QuickSort {
         arr[right]=temp;
         return pIndex;
     }
-    private static int Randpartition(int[] arr,int left,int right){
+    private static int randPartition(int[] arr,int left,int right){
         Random rand=new Random();
         int index=rand.nextInt(right-left+1)+left;
         int temp=arr[index];

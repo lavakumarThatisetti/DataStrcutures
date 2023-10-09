@@ -1,5 +1,6 @@
 package graphs;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.Scanner;
@@ -46,12 +47,10 @@ public class SSSP {
         while(queue.size()!=0){
             int first=queue.poll();
             System.out.print(first+" ");
-            ListIterator<Integer> iterator = adjList[first].listIterator();
-            while(iterator.hasNext()){
-                int i=iterator.next();
-                if(!visited[i]){
-                    visited[i]=true;
-                    distanceList[i]=distanceList[first]+1;
+            for (int i : adjList[first]) {
+                if (!visited[i]) {
+                    visited[i] = true;
+                    distanceList[i] = distanceList[first] + 1;
                     queue.add(i);
                 }
             }

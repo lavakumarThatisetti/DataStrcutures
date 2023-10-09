@@ -1,8 +1,6 @@
 package Top100LeetcodeLikedQuestions;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class findAnagrams_438 {
     public static List<Integer> findAnagrams(String s, String p) {

@@ -24,8 +24,21 @@ public class BestTimeBuySellStockCooldown_309 {
         return dp[len-1][0];
     }
 
+    public static int maxProfitSinglePass(int[] prices) {
+        int len=prices.length;
+        int nostock=0,hold=Integer.MIN_VALUE,sold=0,prevsold=0;
+        for(int i=0;i<len;i++){
+            prevsold=sold;
+            sold=hold+prices[i];
+            hold=Math.max(hold,nostock-prices[i]);
+            nostock=Math.max(nostock,prevsold);
+        }
+        return Math.max(nostock,sold);
+    }
+
     public static void main(String[] args) {
         int[] price={1,2,3,0,2};
         System.out.println(maxProfit(price));
+        System.out.println(maxProfitSinglePass(price));
     }
 }

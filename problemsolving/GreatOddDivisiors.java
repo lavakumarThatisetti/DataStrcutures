@@ -25,7 +25,7 @@ public class GreatOddDivisiors {
     {
         return sum(b) - sum(a - 1);
     }
-    public static void main(String args[] ) throws Exception {
+    public static void main(String[] args) throws Exception {
         Scanner s = new Scanner(System.in);
         int t = s.nextInt();
         while(t>0){

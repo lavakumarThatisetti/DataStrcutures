@@ -3,7 +3,7 @@ package sorting;
 public class RadixSortStrings {
 
     private static void countSort(String[] arr,int index){
-        int count[] = new int[256];
+        int[] count = new int[256];
 
         for(String val:arr){
             count[(val.charAt(index))]++;
@@ -21,13 +21,13 @@ public class RadixSortStrings {
 
         int maxNum=0;
         for(String str:arr){
-            maxNum=str.length()>maxNum?str.length():maxNum;
+            maxNum= Math.max(str.length(), maxNum);
         }
         for(int index=maxNum-1;index>=0;index--){
             countSort(arr,index);
         }
-        for(int i=0;i<arr.length;i++){
-            System.out.print(arr[i]+" ");
+        for (String s : arr) {
+            System.out.print(s + " ");
         }
         System.out.println();
     }

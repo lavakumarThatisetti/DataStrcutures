@@ -19,9 +19,7 @@ public class RabinKarp {
         return hash;
     }
     public static boolean rabinKarp(String s,String p){
-
         double hashVal=hashFunc(p,getMax(p));
-        System.out.println("HashVal ="+hashVal);
         int n=s.length();
         int m=p.length();
         for(int i=0;i<n-m;i++){

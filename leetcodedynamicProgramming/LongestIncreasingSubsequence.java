@@ -42,10 +42,30 @@ public class LongestIncreasingSubsequence {
         }
         return len;
     }
+    public int lengthOfLISDP(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int[] dp = new int[nums.length];
+        dp[0] = 1;
+        int maxans = 1;
+        for (int i = 1; i < dp.length; i++) {
+            int maxval = 0;
+            for (int j = 0; j < i; j++) {
+                if (nums[i] > nums[j]) {
+                    maxval = Math.max(maxval, dp[j]);
+                }
+            }
+            dp[i] = maxval + 1;
+            maxans = Math.max(maxans, dp[i]);
+        }
+        return maxans;
+    }
     public static void main(String[] args) {
         LongestIncreasingSubsequence lis = new LongestIncreasingSubsequence();
         int arr[] = {3,4,-1,0,6,2,3};
         System.out.println(lis.longestIncresingSubSequence(arr));
         System.out.println(lis.lengthOfLIS(arr));
+        System.out.println(lis.lengthOfLISDP(arr));
     }
 }

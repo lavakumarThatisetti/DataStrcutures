@@ -2,7 +2,7 @@ package searching;
 
 import java.util.Random;
 
-public class KthLargestElement {
+public class KthElement {
     private static int kthSmallest(int[] arr,int l,int r,int k){
         Random rand = new Random(0);
         while(l<=r) {

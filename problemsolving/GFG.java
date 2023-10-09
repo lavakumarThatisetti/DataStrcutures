@@ -6,18 +6,14 @@ class GFG
 {
     static void allLexicographicRecurArray(int[] arr,int[] data,int index, int last)
     {
-        int length = arr.length;
-        for (int i = 0; i < length; i++)
-        {
-            if(index<arr.length)
-                 data[index] = arr[i];
+        for (int j : arr) {
+            if (index < arr.length)
+                data[index] = j;
             if (index == last) {
-                for (int j = 0; j < data.length; j++)
-                    System.out.print(data[j]+" ");
+                for (int datum : data) System.out.print(datum + " ");
                 System.out.println();
-            }
-            else
-                allLexicographicRecurArray(arr,data,index+1,last);
+            } else
+                allLexicographicRecurArray(arr, data, index + 1, last);
         }
     }
     static void combinationUtil(int arr[], int data[], int start,
@@ -43,12 +39,8 @@ class GFG
     public static void main(String[] args)
     {
         int arr[]={1,2};
-
         int r=2;
         int[] data=new int[r];
-        int[] temp=new int[r];
-        for(int i=0;i<r;i++)
-            temp[i]=arr[i];
         combinationUtil(arr,data,0,arr.length-1,0,r);
     }
 }
